@@ -7,7 +7,7 @@
 
     <bean id="periodPropertyConfigurer" class="com.dianping.period.client.PeriodPropertyConfigurer"/>
 
-    <bean id="propertyConfigurer" class="com.dianping.web.PropertyConfigurerImpl">
+    <bean id="propertyConfigurer" class="com.dianping.web.PropertyConfigurerImpl" scope="prototype">
         <property name="key" value="${period.child3}"/>
     </bean>
 

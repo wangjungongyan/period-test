@@ -1,7 +1,6 @@
 package com.dianping.web;
 
 import com.dianping.period.client.PeriodClientUtil;
-import com.dianping.period.server.PeriodServerUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class TestAction extends ActionSupport {
@@ -16,8 +15,13 @@ public class TestAction extends ActionSupport {
 
     public String execute() throws Exception {
         String val = propertyConfigurer.returnKey();
-        value = (String) PeriodClientUtil.getProperty(key);
-        PeriodServerUtil.updateNode("period.child3333", "ddd");
+        //value = (String) PeriodClientUtil.getProperty(key);
+        //PeriodServerUtil.updateNode("period.child3", "ddd", "alpha");
+//
+//        PeriodServerUtil.createPersistentNode("period.child4", "2", "alpha");
+//
+//        PeriodServerUtil.deleteNode("period.child4","alpha");
+        PeriodClientUtil.getChildrenProperties("period", "alpha");
         return SUCCESS;
     }
 
