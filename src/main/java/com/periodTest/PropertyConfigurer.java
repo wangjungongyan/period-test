@@ -1,4 +1,4 @@
-package com.dianping.web;
+package com.periodTest;
 
 /**
  * Created by vali on 15-5-14.

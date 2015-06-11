@@ -5,10 +5,10 @@
        xsi:schemaLocation="
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="periodPropertyConfigurer" class="com.dianping.period.client.PeriodPropertyConfigurer"/>
+    <bean id="periodPropertyConfigurer" class="client.PeriodPropertyConfigurer"/>
 
-    <bean id="propertyConfigurer" class="com.dianping.web.PropertyConfigurerImpl" scope="prototype">
-        <property name="key" value="${period.child3}"/>
-    </bean>
+    <!--<bean id="propertyConfigurer" class="com.dianping.web.PropertyConfigurerImpl" scope="prototype">-->
+        <!--<property name="key" value="${period.child3}"/>-->
+    <!--</bean>-->
 
 </beans>

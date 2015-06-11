@@ -1,7 +1,11 @@
-package com.dianping.web;
+package com.periodTest;
 
-import com.dianping.period.client.PeriodClientUtil;
 import com.opensymphony.xwork2.ActionSupport;
+import com.period.client.PeriodClientUtil;
+import com.period.common.PeriodEntity;
+import org.apache.struts2.json.JSONUtil;
+
+import java.util.Map;
 
 public class TestAction extends ActionSupport {
 
@@ -11,17 +15,20 @@ public class TestAction extends ActionSupport {
 
     private String value = "";
 
+    private Map<String, PeriodEntity> chilren = null;
+
     private PropertyConfigurer propertyConfigurer;
 
     public String execute() throws Exception {
-        String val = propertyConfigurer.returnKey();
-        //value = (String) PeriodClientUtil.getProperty(key);
-        //PeriodServerUtil.updateNode("period.child3", "ddd", "alpha");
-//
-//        PeriodServerUtil.createPersistentNode("period.child4", "2", "alpha");
-//
-//        PeriodServerUtil.deleteNode("period.child4","alpha");
-        PeriodClientUtil.getChildrenProperties("period", "alpha");
+        //String val = propertyConfigurer.returnKey();
+        // PeriodServerUtil.createPersistentNode("ly-service.child1", "2", "alpha");
+        //PeriodServerUtil.updateNode("ly-service.child1", "ddd", "alpha");
+        chilren = PeriodClientUtil.getChildrenProperties("ly-service");
+        //value = (String) PeriodClientUtil.getProperty("ly-service.child1");
+        //PeriodServerUtil.deleteNode("ly-service.child1", "alpha");
+        //System.out.println("ly-service.child1:" + value);
+        value = JSONUtil.serialize(chilren);
+        System.out.println("chilren:" + value);
         return SUCCESS;
     }
 
